@@ -7,188 +7,189 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .hidden { display: none; }
-        /* Efecto suave para el scroll */
         html { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-800 antialiased">
 
-    <div class="bg-black text-white text-center py-3 text-xs md:text-sm font-black tracking-widest uppercase shadow-md sticky top-0 z-40">
-        📦 Envío Gratis - Pago al recibir en Lima y agencias en Provincia 🚚
+    <div class="bg-black text-white text-center py-2 md:py-3 text-[10px] md:text-sm font-black tracking-widest uppercase shadow-md sticky top-0 z-40">
+        📦 Envío Gratis - Pago al recibir en Lima y Provincias 🚚
     </div>
 
     <main class="max-w-xl mx-auto bg-white shadow-2xl min-h-screen relative pb-10">
         
-        <header class="relative bg-gradient-to-b from-gray-100 to-white pb-6">
-            <img src="./img/principal.png" alt="Renöva+" class="w-full h-auto object-cover shadow-sm">
+        <header class="relative bg-gradient-to-b from-gray-100 to-white pb-5">
+            <img src="./img/principal.png" alt="Renöva+" class="w-full h-[35vh] md:h-[45vh] object-cover object-center shadow-sm">
             
-            <div class="px-6 pt-6 text-center">
-                <div class="inline-block bg-fuchsia-100 text-fuchsia-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide mb-3 border border-fuchsia-200">
+            <div class="px-5 pt-4 text-center">
+                <div class="inline-block bg-fuchsia-100 text-fuchsia-700 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wide mb-2 border border-fuchsia-200">
                     🇫🇷 Calidad Francesa + 🇵🇪 Hecho en Perú
                 </div>
-                <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-3">
-                    No es solo colágeno, es tu <span class="text-fuchsia-600">Dosis Diaria de Juventud</span>
+                
+                <h1 class="text-[26px] md:text-4xl font-extrabold text-gray-900 leading-[1.1] mb-2">
+                    No es solo colágeno, es tu <br><span class="text-fuchsia-600">Dosis Diaria de Juventud</span>
                 </h1>
-                <p class="text-gray-600 font-medium text-lg leading-relaxed mb-6">
-                    El único suplemento premium con <span class="font-bold text-black border-b-2 border-green-500">11.4g de Biopéptidos de Colágeno Puro (Peptan®)</span>, diseñado para fortalecer tus articulaciones, rejuvenecer tu piel y frenar la caída del cabello.
+                
+                <p class="text-gray-600 font-medium text-sm md:text-base leading-snug mb-4 px-2">
+                    Único con <span class="font-bold text-black border-b border-green-500">11.4g de Colágeno Puro (Peptan®)</span>. Fortalece articulaciones y frena la caída del cabello.
                 </p>
 
-                <button onclick="abrirPopup()" class="w-full bg-green-600 hover:bg-green-700 text-white font-black text-xl py-5 rounded-xl shadow-[0_10px_20px_rgba(22,163,74,0.3)] border-b-4 border-green-800 uppercase tracking-wide transition-all transform hover:scale-[1.02] active:scale-95 flex justify-center items-center gap-2">
+                <button onclick="abrirPopup()" class="w-full bg-green-600 hover:bg-green-700 text-white font-black text-lg py-4 rounded-xl shadow-[0_8px_15px_rgba(22,163,74,0.3)] border-b-4 border-green-800 uppercase tracking-wide transition-all transform hover:scale-[1.02] active:scale-95 flex justify-center items-center gap-2">
                     ¡Sí, Quiero Mi Renöva+! 🛍️
                 </button>
                 
-                <div class="flex justify-center items-center gap-2 mt-4 text-sm text-gray-500 font-semibold">
+                <div class="flex justify-center items-center gap-1 mt-3 text-xs text-gray-500 font-bold">
                     <span>⭐⭐⭐⭐⭐</span>
                     <span>Más de 10,000 clientes en Perú</span>
                 </div>
             </div>
         </header>
 
-        <section class="px-6 py-10 bg-gray-900 text-white text-center">
-            <h2 class="text-2xl font-bold mb-4 text-fuchsia-400">¿Por qué tu colágeno actual no funciona?</h2>
-            <p class="text-gray-300 mb-6 text-sm leading-relaxed">
-                La OMS recomienda 10 gramos diarios de colágeno. Sin embargo, la mayoría de marcas en Perú (como Fuxion, Teoma o Genacol) te dan entre 1g y 6g por toma. <strong>Estás tirando tu dinero.</strong>
+        <section class="px-6 py-8 bg-gray-900 text-white text-center">
+            <h2 class="text-xl font-bold mb-3 text-fuchsia-400">¿Por qué tu colágeno actual no funciona?</h2>
+            <p class="text-gray-300 mb-5 text-sm leading-relaxed">
+                La OMS recomienda 10 gramos diarios. La mayoría de marcas en Perú te dan entre 1g y 6g por toma. <strong>Estás tirando tu dinero.</strong>
             </p>
             
-            <div class="bg-white p-2 rounded-lg mb-6 shadow-lg">
+            <div class="bg-white p-2 rounded-lg mb-5 shadow-lg">
                 <img src="./img/comparativa.jpeg" alt="Comparativa de Colágenos" class="w-full h-auto rounded">
             </div>
 
-            <p class="text-lg font-bold">
-                RENÖVA+ te garantiza <span class="text-green-400 text-2xl">11.4 gramos reales</span> por scoop.
+            <p class="text-base font-bold">
+                RENÖVA+ te garantiza <span class="text-green-400 text-xl">11.4 gramos reales</span> por toma.
             </p>
         </section>
 
-        <section class="px-6 py-10">
-            <h2 class="text-2xl font-extrabold text-center text-gray-900 mb-8">
+        <section class="px-5 py-8">
+            <h2 class="text-xl font-extrabold text-center text-gray-900 mb-6">
                 Fórmula Francesa <span class="text-fuchsia-600">Premium</span>
             </h2>
 
-            <img src="./img/ingredientes.png" alt="Fórmula Premium" class="w-full h-auto rounded-xl shadow-md mb-8">
+            <img src="./img/ingredientes.png" alt="Fórmula Premium" class="w-full h-auto rounded-xl shadow-md mb-6">
 
-            <div class="space-y-4">
-                <div class="flex items-start bg-green-50 p-4 rounded-xl border border-green-100">
-                    <div class="text-green-600 text-2xl mr-4">🏃‍♀️</div>
+            <div class="space-y-3">
+                <div class="flex items-start bg-green-50 p-3 rounded-xl border border-green-100">
+                    <div class="text-green-600 text-xl mr-3">🏃‍♀️</div>
                     <div>
-                        <h3 class="font-bold text-gray-900">Articulaciones sin dolor</h3>
-                        <p class="text-sm text-gray-600 mt-1">Alivia molestias en rodillas, espalda y caderas, acelerando la recuperación muscular.</p>
+                        <h3 class="font-bold text-gray-900 text-sm">Articulaciones sin dolor</h3>
+                        <p class="text-xs text-gray-600 mt-1">Alivia molestias en rodillas, espalda y caderas, acelerando la recuperación muscular.</p>
                     </div>
                 </div>
 
-                <div class="flex items-start bg-fuchsia-50 p-4 rounded-xl border border-fuchsia-100">
-                    <div class="text-fuchsia-600 text-2xl mr-4">✨</div>
+                <div class="flex items-start bg-fuchsia-50 p-3 rounded-xl border border-fuchsia-100">
+                    <div class="text-fuchsia-600 text-xl mr-3">✨</div>
                     <div>
-                        <h3 class="font-bold text-gray-900">Piel, Cabello y Uñas</h3>
-                        <p class="text-sm text-gray-600 mt-1">Mejora la firmeza de la piel, reduce celulitis y frena radicalmente la caída del cabello.</p>
+                        <h3 class="font-bold text-gray-900 text-sm">Piel, Cabello y Uñas</h3>
+                        <p class="text-xs text-gray-600 mt-1">Mejora la firmeza de la piel, reduce celulitis y frena radicalmente la caída del cabello.</p>
                     </div>
                 </div>
 
-                <div class="flex items-start bg-orange-50 p-4 rounded-xl border border-orange-100">
-                    <div class="text-orange-600 text-2xl mr-4">🔋</div>
+                <div class="flex items-start bg-orange-50 p-3 rounded-xl border border-orange-100">
+                    <div class="text-orange-600 text-xl mr-3">🔋</div>
                     <div>
-                        <h3 class="font-bold text-gray-900">Energía y Desinflamación</h3>
-                        <p class="text-sm text-gray-600 mt-1">Gracias a la Coenzima Q10 y el Resveratrol, desinflama naturalmente y aumenta tu vitalidad diaria.</p>
+                        <h3 class="font-bold text-gray-900 text-sm">Energía y Desinflamación</h3>
+                        <p class="text-xs text-gray-600 mt-1">Gracias a la Coenzima Q10 y el Resveratrol, desinflama y aumenta tu vitalidad diaria.</p>
                     </div>
                 </div>
             </div>
             
-            <p class="text-center text-sm text-gray-500 font-semibold mt-6 italic">Sin azúcar añadida • Sabor Berries 🫐 • Mejora tu digestión</p>
+            <p class="text-center text-[11px] text-gray-500 font-bold mt-5 italic">Sin azúcar añadida • Sabor Berries 🫐 • Mejora digestión</p>
         </section>
 
-        <section class="px-6 py-8 bg-gray-100 border-t border-gray-200 text-center">
-            <h2 class="text-xl font-bold text-gray-900 mb-2">Rutina simple, resultados reales ⏳</h2>
-            <p class="text-gray-600 mb-6">Solo necesitas <strong>1 cucharada en 250ml de agua</strong> (preferiblemente en ayunas) para empezar a sentir el cambio.</p>
+        <section class="px-5 py-8 bg-gray-100 border-t border-gray-200 text-center">
+            <h2 class="text-lg font-bold text-gray-900 mb-2">Rutina simple, resultados reales ⏳</h2>
+            <p class="text-gray-600 text-sm mb-6">Solo necesitas <strong>1 cucharada en 250ml de agua</strong> en ayunas para sentir el cambio.</p>
 
-            <div class="bg-white p-5 rounded-2xl shadow-xl border-2 border-fuchsia-100 relative overflow-hidden">
-                <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-black px-3 py-1 rounded-bl-lg">
+            <div class="bg-white p-4 rounded-2xl shadow-xl border-2 border-fuchsia-100 relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-red-500 text-white text-[10px] font-black px-2 py-1 rounded-bl-lg">
                     OFERTA POR HOY
                 </div>
-                <h3 class="font-black text-2xl text-gray-900 mb-1">Asegura tu tratamiento</h3>
-                <p class="text-gray-500 text-sm mb-5">Paga al recibir en Lima. Envíos seguros a Provincia.</p>
+                <h3 class="font-black text-xl text-gray-900 mb-1">Asegura tu tratamiento</h3>
+                <p class="text-gray-500 text-xs mb-4">Paga al recibir en Lima. Envíos seguros a Provincia.</p>
                 
-                <button onclick="abrirPopup()" class="w-full bg-green-600 hover:bg-green-700 text-white font-black text-xl py-5 rounded-xl shadow-[0_10px_20px_rgba(22,163,74,0.3)] border-b-4 border-green-800 uppercase tracking-wide transition-all transform hover:scale-[1.02] active:scale-95">
+                <button onclick="abrirPopup()" class="w-full bg-green-600 hover:bg-green-700 text-white font-black text-lg py-4 rounded-xl shadow-[0_8px_15px_rgba(22,163,74,0.3)] border-b-4 border-green-800 uppercase tracking-wide transition-all transform hover:scale-[1.02] active:scale-95">
                     Hacer Mi Pedido Ahora 👇
                 </button>
             </div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Mercado_Pago_logo.svg/512px-Mercado_Pago_logo.svg.png" class="h-6 mx-auto mt-4 opacity-50" alt="Métodos de pago seguros">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Mercado_Pago_logo.svg/512px-Mercado_Pago_logo.svg.png" class="h-5 mx-auto mt-4 opacity-50" alt="Métodos de pago seguros">
         </section>
 
     </main>
 
     <div id="checkout-popup" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-end sm:items-center justify-center transition-opacity">
-        <div class="bg-white w-full max-w-lg rounded-t-3xl sm:rounded-3xl p-6 max-h-[90vh] overflow-y-auto relative">
+        <div class="bg-white w-full max-w-lg rounded-t-3xl sm:rounded-3xl p-5 max-h-[90vh] overflow-y-auto relative">
             
-            <div class="flex justify-between items-center border-b pb-4 mb-5">
+            <div class="flex justify-between items-center border-b pb-3 mb-4">
                 <div>
-                    <h3 class="font-black text-xl text-gray-900">Finaliza tu Pedido</h3>
-                    <p class="text-xs text-green-600 font-bold mt-1">✓ Estás a un paso de confirmar</p>
+                    <h3 class="font-black text-lg text-gray-900">Finaliza tu Pedido</h3>
+                    <p class="text-[10px] text-green-600 font-bold mt-1">✓ Estás a un paso de confirmar</p>
                 </div>
                 <button onclick="cerrarPopup()" class="text-gray-400 hover:text-red-500 text-3xl font-light leading-none">&times;</button>
             </div>
 
-            <div class="space-y-3 mb-6">
-                <label class="flex justify-between items-center border-2 border-red-500 bg-red-50 p-4 rounded-xl cursor-pointer paquete-label shadow-sm transition-all">
+            <div class="space-y-2 mb-5">
+                <label class="flex justify-between items-center border-2 border-red-500 bg-red-50 p-3 rounded-xl cursor-pointer paquete-label shadow-sm transition-all">
                     <div class="flex items-center gap-3">
                         <input type="radio" name="paquete" value="170" checked class="w-5 h-5 text-red-600 accent-red-600">
                         <div>
-                            <p class="font-extrabold text-gray-900 text-lg leading-none">1 Unidad</p>
-                            <span class="inline-block bg-emerald-500 text-white text-[10px] px-2 py-1 rounded font-bold uppercase mt-1">Oferta Base</span>
+                            <p class="font-extrabold text-gray-900 text-base leading-none">1 Unidad</p>
+                            <span class="inline-block bg-emerald-500 text-white text-[9px] px-2 py-1 rounded font-bold uppercase mt-1">Oferta Base</span>
                         </div>
                     </div>
-                    <p class="font-black text-xl text-gray-900">S/. 170</p>
+                    <p class="font-black text-lg text-gray-900">S/. 170</p>
                 </label>
 
-                <label class="flex justify-between items-center border border-gray-200 hover:border-orange-500 p-4 rounded-xl cursor-pointer paquete-label transition-all">
+                <label class="flex justify-between items-center border border-gray-200 hover:border-orange-500 p-3 rounded-xl cursor-pointer paquete-label transition-all">
                     <div class="flex items-center gap-3">
                         <input type="radio" name="paquete" value="320" class="w-5 h-5 accent-orange-500">
                         <div>
-                            <p class="font-extrabold text-gray-900 text-lg leading-none">2 Unidades</p>
-                            <span class="inline-block bg-orange-500 text-white text-[10px] px-2 py-1 rounded font-bold uppercase mt-1">Más Vendido</span>
+                            <p class="font-extrabold text-gray-900 text-base leading-none">2 Unidades</p>
+                            <span class="inline-block bg-orange-500 text-white text-[9px] px-2 py-1 rounded font-bold uppercase mt-1">Más Vendido</span>
                         </div>
                     </div>
                     <div class="text-right">
-                        <p class="text-xs line-through text-gray-400">S/. 340</p>
-                        <p class="font-black text-xl text-gray-900">S/. 320</p>
+                        <p class="text-[10px] line-through text-gray-400">S/. 340</p>
+                        <p class="font-black text-lg text-gray-900">S/. 320</p>
                     </div>
                 </label>
 
-                <label class="flex justify-between items-center border border-gray-200 hover:border-green-500 p-4 rounded-xl cursor-pointer paquete-label transition-all">
+                <label class="flex justify-between items-center border border-gray-200 hover:border-green-500 p-3 rounded-xl cursor-pointer paquete-label transition-all">
                     <div class="flex items-center gap-3">
                         <input type="radio" name="paquete" value="460" class="w-5 h-5 accent-green-500">
                         <div>
-                            <p class="font-extrabold text-gray-900 text-lg leading-none">3 Unidades</p>
-                            <span class="inline-block bg-fuchsia-600 text-white text-[10px] px-2 py-1 rounded font-bold uppercase mt-1">Super Oferta</span>
+                            <p class="font-extrabold text-gray-900 text-base leading-none">3 Unidades</p>
+                            <span class="inline-block bg-fuchsia-600 text-white text-[9px] px-2 py-1 rounded font-bold uppercase mt-1">Super Oferta</span>
                         </div>
                     </div>
                     <div class="text-right">
-                        <p class="text-xs line-through text-gray-400">S/. 510</p>
-                        <p class="font-black text-xl text-gray-900">S/. 460</p>
+                        <p class="text-[10px] line-through text-gray-400">S/. 510</p>
+                        <p class="font-black text-lg text-gray-900">S/. 460</p>
                     </div>
                 </label>
             </div>
 
-            <form id="form-pedido" class="space-y-4">
-                <input type="text" id="cliente-nombre" placeholder="Tus Nombres y Apellidos *" required class="w-full border-2 border-gray-200 rounded-xl p-3 outline-none focus:border-green-500 bg-gray-50 text-gray-800 font-medium">
-                <input type="tel" id="cliente-whatsapp" placeholder="WhatsApp (Ej: 987789987) *" required class="w-full border-2 border-gray-200 rounded-xl p-3 outline-none focus:border-green-500 bg-gray-50 text-gray-800 font-medium">
+            <form id="form-pedido" class="space-y-3">
+                <input type="text" id="cliente-nombre" placeholder="Tus Nombres y Apellidos *" required class="w-full border-2 border-gray-200 rounded-xl p-3 text-sm outline-none focus:border-green-500 bg-gray-50 text-gray-800 font-medium">
+                <input type="tel" id="cliente-whatsapp" placeholder="WhatsApp (Ej: 987789987) *" required class="w-full border-2 border-gray-200 rounded-xl p-3 text-sm outline-none focus:border-green-500 bg-gray-50 text-gray-800 font-medium">
                 
-                <select id="cliente-departamento" required class="w-full border-2 border-gray-200 rounded-xl p-3 outline-none focus:border-green-500 bg-gray-50 text-gray-800 font-medium">
+                <select id="cliente-departamento" required class="w-full border-2 border-gray-200 rounded-xl p-3 text-sm outline-none focus:border-green-500 bg-gray-50 text-gray-800 font-medium">
                     <option value="" disabled selected>Departamento *</option>
                     <option value="Lima">Lima</option>
                     <option value="Provincia">Provincia</option>
                 </select>
 
-                <div class="grid grid-cols-2 gap-3">
-                    <input type="text" id="cliente-ciudad" placeholder="Distrito/Ciudad *" required class="w-full border-2 border-gray-200 rounded-xl p-3 outline-none focus:border-green-500 bg-gray-50 text-gray-800 font-medium">
-                    <input type="text" id="cliente-direccion" placeholder="Dirección Exacta *" required class="w-full border-2 border-gray-200 rounded-xl p-3 outline-none focus:border-green-500 bg-gray-50 text-gray-800 font-medium">
+                <div class="grid grid-cols-2 gap-2">
+                    <input type="text" id="cliente-ciudad" placeholder="Distrito/Ciudad *" required class="w-full border-2 border-gray-200 rounded-xl p-3 text-sm outline-none focus:border-green-500 bg-gray-50 text-gray-800 font-medium">
+                    <input type="text" id="cliente-direccion" placeholder="Dirección Exacta *" required class="w-full border-2 border-gray-200 rounded-xl p-3 text-sm outline-none focus:border-green-500 bg-gray-50 text-gray-800 font-medium">
                 </div>
-                <input type="text" id="cliente-referencia" placeholder="Referencia (Ej: Frente al parque) *" required class="w-full border-2 border-gray-200 rounded-xl p-3 outline-none focus:border-green-500 bg-gray-50 text-gray-800 font-medium">
+                <input type="text" id="cliente-referencia" placeholder="Referencia (Ej: Frente al parque) *" required class="w-full border-2 border-gray-200 rounded-xl p-3 text-sm outline-none focus:border-green-500 bg-gray-50 text-gray-800 font-medium">
 
-                <button type="submit" id="btn-confirmar" class="w-full bg-green-600 hover:bg-green-700 text-white font-black text-xl py-5 rounded-xl shadow-[0_10px_20px_rgba(22,163,74,0.3)] border-b-4 border-green-800 uppercase tracking-wide transition-all transform hover:scale-[1.02] active:scale-95 mt-4">
+                <button type="submit" id="btn-confirmar" class="w-full bg-green-600 hover:bg-green-700 text-white font-black text-lg py-4 rounded-xl shadow-[0_8px_15px_rgba(22,163,74,0.3)] border-b-4 border-green-800 uppercase tracking-wide transition-all transform hover:scale-[1.02] active:scale-95 mt-2">
                     CONFIRMO POR S/. 170.00
                 </button>
             </form>
-            <p class="text-center text-xs text-gray-400 mt-4 flex justify-center items-center gap-1">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
+            <p class="text-center text-[10px] text-gray-400 mt-3 flex justify-center items-center gap-1">
+                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
                 Tus datos están 100% seguros
             </p>
         </div>
