@@ -20,6 +20,21 @@
       ttq.page(); // Evento Pageview principal
     }(window, document, 'ttq');
     </script>
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2162351004170209');
+    fbq('track', 'PageView'); // Evento Pageview de Meta
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2162351004170209&ev=PageView&noscript=1"
+    /></noscript>
     </head>
 <body class="bg-gray-50 font-sans text-gray-800 antialiased">
 
@@ -207,27 +222,32 @@
     </div>
 
     <script>
-        // Variable para evitar que el evento se dispare dos veces si el usuario cierra y abre el popup
+        // Variable para evitar que los eventos se disparen dos veces
         let checkoutIniciado = false;
 
         function abrirPopup() { 
             document.getElementById('checkout-popup').classList.remove('hidden'); 
             
-            if (!checkoutIniciado && typeof ttq !== 'undefined') {
-                ttq.track('InitiateCheckout', {
-                    content_type: 'product',
-                    contents: [
-                        {
-                            content_id: 'renova_plus',
-                            content_name: 'RENÖVA+',
-                            quantity: 1,
-                            price: 170
-                        }
-                    ],
-                    value: 170,
-                    currency: 'PEN'
-                });
-                checkoutIniciado = true; // Marcamos como disparado
+            if (!checkoutIniciado) {
+                // Evento InitiateCheckout TIKTOK
+                if (typeof ttq !== 'undefined') {
+                    ttq.track('InitiateCheckout', {
+                        content_type: 'product',
+                        contents: [{ content_id: 'renova_plus', content_name: 'RENÖVA+', quantity: 1, price: 170 }],
+                        value: 170,
+                        currency: 'PEN'
+                    });
+                }
+                // Evento InitiateCheckout META
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'InitiateCheckout', {
+                        content_ids: ['renova_plus'],
+                        content_type: 'product',
+                        value: 170,
+                        currency: 'PEN'
+                    });
+                }
+                checkoutIniciado = true; // Marcamos como disparado para ambos
             }
         }
         
@@ -257,20 +277,24 @@
             const precioSeleccionado = document.querySelector('input[name="paquete"]:checked').value;
             const unidades = precioSeleccionado === "170" ? "1 Unidad" : (precioSeleccionado === "320" ? "2 Unidades" : "3 Unidades");
             
-            // Evento CompletePayment final con todos los parámetros
+            // Evento CompletePayment TIKTOK
             if (typeof ttq !== 'undefined') {
                 ttq.track('CompletePayment', {
                     value: Number(precioSeleccionado),
                     currency: 'PEN',
                     content_type: 'product',
-                    contents: [
-                        {
-                            content_id: 'renova_plus',
-                            content_name: 'RENÖVA+ ' + unidades,
-                            quantity: 1,
-                            price: Number(precioSeleccionado)
-                        }
-                    ]
+                    contents: [{ content_id: 'renova_plus', content_name: 'RENÖVA+ ' + unidades, quantity: 1, price: Number(precioSeleccionado) }]
+                });
+            }
+
+            // Evento Purchase META
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Purchase', {
+                    value: Number(precioSeleccionado),
+                    currency: 'PEN',
+                    content_ids: ['renova_plus'],
+                    content_type: 'product',
+                    content_name: 'RENÖVA+ ' + unidades
                 });
             }
 
@@ -294,7 +318,7 @@
             const numeroEmpresa = "51920252669";
             const urlWhatsapp = `https://wa.me/${numeroEmpresa}?text=${encodeURIComponent(mensaje)}`;
             
-            // Retraso de 300ms para asegurar disparo del píxel
+            // Retraso de 300ms para asegurar el disparo de ambos píxeles
             setTimeout(function() {
                 window.open(urlWhatsapp, '_blank');
             }, 300);
