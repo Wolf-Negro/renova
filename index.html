@@ -17,7 +17,7 @@
     ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
 
       ttq.load('D6PNH3JC77UAC7I7LLQG');
-      ttq.page();
+      ttq.page(); // Evento Pageview principal
     }(window, document, 'ttq');
     </script>
     </head>
@@ -207,11 +207,27 @@
     </div>
 
     <script>
+        // Variable para evitar que el evento se dispare dos veces si el usuario cierra y abre el popup
+        let checkoutIniciado = false;
+
         function abrirPopup() { 
             document.getElementById('checkout-popup').classList.remove('hidden'); 
-            // NUEVO: Evento InitiateCheckout de TikTok
-            if (typeof ttq !== 'undefined') {
-                ttq.track('InitiateCheckout');
+            
+            if (!checkoutIniciado && typeof ttq !== 'undefined') {
+                ttq.track('InitiateCheckout', {
+                    content_type: 'product',
+                    contents: [
+                        {
+                            content_id: 'renova_plus',
+                            content_name: 'RENÖVA+',
+                            quantity: 1,
+                            price: 170
+                        }
+                    ],
+                    value: 170,
+                    currency: 'PEN'
+                });
+                checkoutIniciado = true; // Marcamos como disparado
             }
         }
         
@@ -241,13 +257,15 @@
             const precioSeleccionado = document.querySelector('input[name="paquete"]:checked').value;
             const unidades = precioSeleccionado === "170" ? "1 Unidad" : (precioSeleccionado === "320" ? "2 Unidades" : "3 Unidades");
             
-            // NUEVO: Evento CompletePayment de TikTok con valor dinámico
+            // Evento CompletePayment final con todos los parámetros
             if (typeof ttq !== 'undefined') {
                 ttq.track('CompletePayment', {
-                    value: Number(precioSeleccionado), // Pasa 170, 320 o 460 dinámicamente
+                    value: Number(precioSeleccionado),
                     currency: 'PEN',
+                    content_type: 'product',
                     contents: [
                         {
+                            content_id: 'renova_plus',
                             content_name: 'RENÖVA+ ' + unidades,
                             quantity: 1,
                             price: Number(precioSeleccionado)
@@ -276,7 +294,7 @@
             const numeroEmpresa = "51920252669";
             const urlWhatsapp = `https://wa.me/${numeroEmpresa}?text=${encodeURIComponent(mensaje)}`;
             
-            // Retraso de 300ms para asegurar que el píxel se dispare antes de redirigir a WhatsApp
+            // Retraso de 300ms para asegurar disparo del píxel
             setTimeout(function() {
                 window.open(urlWhatsapp, '_blank');
             }, 300);
